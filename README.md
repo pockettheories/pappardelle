@@ -117,4 +117,27 @@ Call the imported function:
 
 # Examples
 
-TODO
+## Example 1. Within a Server State Management application
+
+```python
+from pappardelle import compare_lists
+
+desired_state = [
+  {"package_name": "net-tools"},
+  {"package_name": "build-essential"},
+  {"package_name": "bind9-dnsutils"}
+]
+
+current_state = [
+  {"package_name": "build-essential"},
+  {"package_name": "squid"}
+]
+
+change_plan = compare_lists(
+  desired_state,
+  current_state,
+  lambda x, y: x['package_name'] == y['package_name']
+)
+
+print(change_plan)
+```
