@@ -3,6 +3,8 @@ Pappardelle
 
 Pappardelle is a Python module that provides helper functions for lists and dates.
 
+![Test status](https://github.com/pockettheories/pappardelle/actions/workflows/python-app.yml/badge.svg)
+
 # Change Log
 * **Version 0.2**
   * compare_lists returns a dictionary with keys: =, +, - (instead of: matched, + -)
