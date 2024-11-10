@@ -33,7 +33,7 @@ class TestPappardelle(unittest.TestCase):
         )
 
         # pprint(result)
-        print(json.dumps(result))
+        # print(json.dumps(result))
 
         # We should have the +, -, = irrespective of the results
         assert(
@@ -68,15 +68,42 @@ class TestPappardelle(unittest.TestCase):
         except ValueError:
             raise Exception("match list does not contain the expected elements")
 
+    def test_lookup(self):
+        list1 = [
+            {'hostname': 'A', 'port': 1, 'region': 'ap-south-1'},
+            {'hostname': 'A', 'port': 2, 'region': 'ap-south-1'},
+            {'hostname': 'B', 'port': 1, 'region': 'me-central-1'},
+        ]
+
+        list2 = [
+            {'host': 'A', 'port': 1, 'vendor': 'ACME'},
+            {'host': 'B', 'port': 1, 'vendor': 'NotACME'},
+            {'host': 'B', 'port': 2, 'vendor': 'NotACME'},
+        ]
+
         ##
         ## Lookup Lists
         ##
 
-        result = lookup_lists(
+        results = lookup_lists(
             list1,
             list2,
             lambda x, y: x['hostname'] == y['host'] and x['port'] == y['port']
         )
 
-        print(json.dumps(result))
-        # TODO: Assert
+        assert(len(results) == 3)
+
+        for iter_result in results:
+            assert('base' in iter_result)
+            assert('lookup' in iter_result)
+
+        for iter_result in results:
+            lookup_value_list = list(filter(lambda x: x['host'] == iter_result['base']['hostname'] and x['port'] == iter_result['base']['port'], list2))
+            lookup_value = None
+            if len(lookup_value_list) > 0:
+                lookup_value = lookup_value_list[0]
+            if lookup_value is not None:
+                for iter_dict_key in lookup_value.keys():
+                    assert(iter_result['lookup'][iter_dict_key] == lookup_value[iter_dict_key])
+            else:
+                assert(iter_result['lookup'] is None)
