@@ -2,6 +2,8 @@ import sys
 
 from pappardelle import compare_lists
 from pappardelle import lookup_lists
+from pappardelle import yesterday, tomorrow
+from datetime import date, datetime, timedelta
 import json
 import unittest
 
@@ -107,3 +109,7 @@ class TestPappardelle(unittest.TestCase):
                     assert(iter_result['lookup'][iter_dict_key] == lookup_value[iter_dict_key])
             else:
                 assert(iter_result['lookup'] is None)
+
+    def test_days_delta(self):
+        assert(yesterday() == date.today() - timedelta(days=1))
+        assert(tomorrow() == date.today() + timedelta(days=1))

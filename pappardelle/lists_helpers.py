@@ -1,7 +1,3 @@
-from pprint import pprint
-import json
-
-
 def lookup_lists(list1, list2, match_check=lambda x, y: x == y):  # left outer join
     result = []
     for iter1 in list1:

@@ -6,6 +6,8 @@ Pappardelle is a Python module that provides helper functions for lists and date
 ![Test status](https://github.com/pockettheories/pappardelle/actions/workflows/python-app.yml/badge.svg)
 
 # Change Log
+* **Version 0.3**
+  * Use date as the default type for day/week/month/year relative functions, and datetime as the default type for hour/minute/second relative functions
 * **Version 0.2**
   * compare_lists returns a dictionary with keys: =, +, - (instead of: matched, + -)
   * Added relative date functions
@@ -123,6 +125,7 @@ Call the imported function:
 
 ```python
 from pappardelle import compare_lists
+from pprint import pprint
 
 desired_state = [
   {"package_name": "net-tools"},
@@ -141,5 +144,10 @@ change_plan = compare_lists(
   lambda x, y: x['package_name'] == y['package_name']
 )
 
-print(change_plan)
+pprint(change_plan)
+
+# Output
+# {'+': [{'package_name': 'net-tools'}, {'package_name': 'bind9-dnsutils'}],
+# '-': [{'package_name': 'squid'}],
+# '=': [{'package_name': 'build-essential'}]}
 ```
