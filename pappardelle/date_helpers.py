@@ -102,11 +102,11 @@ def weeks_since(x, ref_date=date.today()):
 # Internal method to support the month_* functions
 def month_add(x, ref_date=date.today()):
     years_to_add = int((ref_date.month + x) / 12)
-    months_to_add = (ref_date.month + x) % 12
+    months_to_set = (ref_date.month + x) % 12
     if type(ref_date) is datetime:
-        return datetime(ref_date.year + years_to_add, ref_date.month + months_to_add, ref_date.day, ref_date.hour, ref_date.minute, ref_date.second, ref_date.microsecond)
+        return datetime(ref_date.year + years_to_add, months_to_set, ref_date.day, ref_date.hour, ref_date.minute, ref_date.second, ref_date.microsecond)
     elif type(ref_date) is date:
-        return date(ref_date.year + years_to_add, ref_date.month + months_to_add, ref_date.day)
+        return date(ref_date.year + years_to_add, months_to_set, ref_date.day)
 
 
 def months_before(x, ref_date=date.today()):
@@ -131,7 +131,7 @@ def years_before(x, ref_date=date.today()):
     if type(ref_date) is datetime:
         return datetime(ref_date.year - x, ref_date.month, ref_date.day, ref_date.hour, ref_date.minute, ref_date.second, ref_date.microsecond)
     elif type(ref_date) is date:
-        return datetime(ref_date.year - x, ref_date.month, ref_date.day)
+        return date(ref_date.year - x, ref_date.month, ref_date.day)
 
 
 # Alias for years_before
