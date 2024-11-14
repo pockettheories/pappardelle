@@ -119,6 +119,10 @@ Call the imported function:
 
 `years_since(num_of_years, from_date)`
 
+## Function Decorators
+
+`exec_time`
+
 # Examples
 
 ## Example 1. Within a Server State Management application
