@@ -1,4 +1,11 @@
 def lookup_lists(list1, list2, match_check=lambda x, y: x == y):  # left outer join
+    """
+    Joins two lists based on a match condition
+    :param list1: Base list
+    :param list2: Lookup list
+    :param match_check: Lambda with 2 arguments to match the elements between the two lists
+    :return: A list containing a dictionary with "base" and "lookup"
+    """
     result = []
     for iter1 in list1:
         matching_iter2 = None
@@ -11,6 +18,13 @@ def lookup_lists(list1, list2, match_check=lambda x, y: x == y):  # left outer j
 
 
 def compare_lists(list1, list2, equal_check=lambda x, y: x == y):
+    """
+    Compares two lists and returns the diff
+    :param list1: First list
+    :param list2: Second list
+    :param equal_check: Optional, Lambda with 2 arguments to compare the elements of the two lists
+    :return: A dictionary containing the keys +, -, =
+    """
     result = {
         '=': [],
         '+': [],
