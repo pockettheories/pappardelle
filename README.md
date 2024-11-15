@@ -6,6 +6,8 @@ Pappardelle is a Python module that provides helper functions for lists and date
 ![Test status](https://github.com/pockettheories/pappardelle/actions/workflows/python-app.yml/badge.svg)
 
 # Change Log
+* **Version 0.4**
+  * Added a function decorator for measuring the function execution time
 * **Version 0.3**
   * Use date as the default type for day/week/month/year relative functions, and datetime as the default type for hour/minute/second relative functions
 * **Version 0.2**
