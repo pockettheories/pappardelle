@@ -1,6 +1,30 @@
 from datetime import datetime, timedelta, date
 
 
+def days_before_at_this_time(x, ref_date=datetime.now()):
+    return ref_date - timedelta(days=x)
+
+
+def days_ago_at_this_time(x, ref_date=datetime.now()):
+    return days_before_at_this_time(x, ref_date)
+
+
+def days_after_at_this_time(x, ref_date=datetime.now()):
+    return ref_date + timedelta(days=x)
+
+
+def days_since_at_this_time(x, ref_date=datetime.now()):
+    return days_after_at_this_time(x, ref_date)
+
+
+def tomorrow_at_this_time():
+    return datetime.now() + timedelta(days=1)
+
+
+def yesterday_at_this_time():
+    return datetime.now() - timedelta(days=1)
+
+
 def days_before(x, ref_date=date.today()):
     return ref_date - timedelta(days=x)
 
@@ -85,6 +109,22 @@ def weeks_before(x, ref_date=date.today()):
     return ref_date - timedelta(weeks=x)
 
 
+def weeks_before_at_this_time(x, ref_date=datetime.now()):
+    return ref_date - timedelta(weeks=x)
+
+
+def weeks_ago_at_this_time(x, ref_date=datetime.now()):
+    return weeks_before_at_this_time(x, ref_date)
+
+
+def weeks_after_at_this_time(x, ref_date=datetime.now()):
+    return ref_date + timedelta(weeks=x)
+
+
+def weeks_since_at_this_time(x, ref_date=datetime.now()):
+    return weeks_after_at_this_time(x, ref_date)
+
+
 # Alias for seconds_before
 def weeks_ago(x):
     return weeks_before(x)
@@ -118,6 +158,22 @@ def months_ago(x):
     return months_before(x)
 
 
+def months_before_at_this_time(x, ref_date=datetime.now()):
+    return month_add(-1*x, ref_date)
+
+
+def months_ago_at_this_time(x, ref_date=datetime.now()):
+    return months_before_at_this_time(x, ref_date)
+
+
+def months_after_at_this_time(x, ref_date=datetime.now()):
+    return month_add(x, ref_date)
+
+
+def months_since_at_this_time(x, ref_date=datetime.now()):
+    return months_after_at_this_time(x, ref_date)
+
+
 def months_after(x, ref_date=date.today()):
     return month_add(x, ref_date)
 
@@ -146,3 +202,20 @@ def years_after(x, ref_date=date.today()):
 # Alias for years_after
 def years_since(x, ref_date=date.today()):
     return years_after(x, ref_date)
+
+
+def years_before_at_this_time(x, ref_date=datetime.now()):
+    return years_before(x, ref_date)
+
+
+def years_ago_at_this_time(x, ref_date=datetime.now()):
+    return years_before_at_this_time(x, ref_date)
+
+
+def years_after_at_this_time(x, ref_date=datetime.now()):
+    return years_after(x, ref_date)
+
+
+def years_since_at_this_time(x, ref_date=datetime.now()):
+    return years_after_at_this_time(x, ref_date)
+
