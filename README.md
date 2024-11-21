@@ -5,25 +5,6 @@ Pappardelle is a Python module that provides helper functions for lists and date
 
 ![Test status](https://github.com/pockettheories/pappardelle/actions/workflows/python-app.yml/badge.svg)
 
-# Change Log
-* **Version 0.4**
-  * Added a function decorator for measuring the function execution time
-* **Version 0.3**
-  * Use date as the default type for day/week/month/year relative functions, and datetime as the default type for hour/minute/second relative functions
-* **Version 0.2**
-  * compare_lists returns a dictionary with keys: =, +, - (instead of: matched, + -)
-  * Added relative date functions
-* **Version 0.1**
-  * First release with compare_lists and lookup_lists functions
-
-# Author
-
-My name is Katkam Nitin Reddy. I am a former software developer living (mostly) in Dubai. I created this library for functionality that I find myself re-writing for a Terraform-style project.
-
-# Acknowledgement
-
-I would like to thank my mom, Katkam Nita Reddy, and my dad, Katkam Narsing Reddy, who have always motivated me to learn and contribute to the open-source community.
-
 # Getting Started
 
 Install the Python module with
@@ -51,6 +32,17 @@ Call the imported function:
 }
 ```
 
+# Change Log
+* **Version 0.4**
+  * Added a function decorator for measuring the function execution time
+* **Version 0.3**
+  * Use date as the default type for day/week/month/year relative functions, and datetime as the default type for hour/minute/second relative functions
+* **Version 0.2**
+  * compare_lists returns a dictionary with keys: =, +, - (instead of: matched, + -)
+  * Added relative date functions
+* **Version 0.1**
+  * First release with compare_lists and lookup_lists functions
+
 # References
 
 ## List Functions
@@ -72,6 +64,18 @@ Call the imported function:
 `tomorrow()`
 
 `yesterday()`
+
+`days_before_at_this_time(num_of_days, from_datetime)`
+
+`days_ago_at_this_time(num_of_days, from_datetime)`
+
+`days_after_at_this_time(num_of_days, from_datetime)`
+
+`days_since_at_this_time(num_of_days, from_datetime)`
+
+`tomorrow_at_this_time()`
+
+`yesterday_at_this_time()`
 
 `hours_before(num_of_hours, from_date)`
 
@@ -105,6 +109,14 @@ Call the imported function:
 
 `weeks_since(num_of_weeks, from_date)`
 
+`weeks_before_at_this_time(num_of_weeks, from_datetime)`
+
+`weeks_ago_at_this_time(num_of_weeks, from_datetime)`
+
+`weeks_after_at_this_time(num_of_weeks, from_datetime)`
+
+`weeks_since_at_this_time(num_of_weeks, from_datetime)`
+
 `months_before(num_of_months, from_date)`
 
 `months_ago(num_of_months)`
@@ -112,6 +124,14 @@ Call the imported function:
 `months_after(num_of_months, from_date)`
 
 `months_since(num_of_months, from_date)`
+
+`months_before_at_this_time(num_of_months, from_datetime)`
+
+`months_ago_at_this_time(num_of_months, from_datetime)`
+
+`months_after_at_this_time(num_of_months, from_datetime)`
+
+`months_since_at_this_time(num_of_months, from_datetime)`
 
 `years_before(num_of_years, from_date)`
 
@@ -121,9 +141,25 @@ Call the imported function:
 
 `years_since(num_of_years, from_date)`
 
+`years_before_at_this_time(num_of_years, from_datetime)`
+
+`years_ago_at_this_time(num_of_years, from_datetime)`
+
+`years_after_at_this_time(num_of_years, from_datetime)`
+
+`years_since_at_this_time(num_of_years, from_datetime)`
+
 ## Function Decorators
 
 `exec_time`
+
+# Author
+
+My name is Katkam Nitin Reddy. I am a former software developer living (mostly) in Dubai. I created this library for functionality that I find myself re-writing for a Terraform-style project.
+
+# Acknowledgement
+
+I would like to thank my mom, Katkam Nita Reddy, and my dad, Katkam Narsing Reddy, who have always motivated me to learn and contribute to the open-source community.
 
 # Examples
 
