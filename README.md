@@ -33,6 +33,8 @@ Call the imported function:
 ```
 
 # Change Log
+* **Version 0.5**
+  * Added dictionary helpers
 * **Version 0.4**
   * Added a function decorator for measuring the function execution time
 * **Version 0.3**

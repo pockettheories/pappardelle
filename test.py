@@ -1,10 +1,11 @@
 import unittest
 from test_date_helpers import TestDateHelpers
 from test_list_helpers import TestListHelpers
+from test_dict_helpers import TestDictHelpers
 
 
 def run_some_tests():
-    test_classes_to_run = [TestDateHelpers, TestListHelpers]
+    test_classes_to_run = [TestDateHelpers, TestListHelpers, TestDictHelpers]
     loader = unittest.TestLoader()
 
     suites_list = []
