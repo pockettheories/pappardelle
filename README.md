@@ -33,8 +33,12 @@ Call the imported function:
 ```
 
 # Change Log
+* **Version 0.7**
+  * Added deep_copy_dict_no_overwrite
+* **Version 0.6**
+  * Added get_dict_path
 * **Version 0.5**
-  * Added dictionary helpers
+  * Added make_dict_path, set_dict_path
 * **Version 0.4**
   * Added a function decorator for measuring the function execution time
 * **Version 0.3**

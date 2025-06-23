@@ -25,3 +25,22 @@ def get_dict_path(a_dict, a_path):
     return curr_obj
 
 
+# def deep_copy_dict_no_overwrite(a_src, a_dest, overwrite=False):
+#     for k, v in a_src.items():
+#         if isinstance(v, dict) and k in a_dest:
+#             deep_copy_dict_no_overwrite(a_src[k], a_dest[k])
+#         else:
+#             if ((overwrite == True) or (not k in a_dest)):
+#                 a_dest[k] = v  # Buggy - doesnt overwrite
+#                 print(k, "Overwriten", overwrite)
+
+def deep_copy_dict_no_overwrite(a_src, a_dest, overwrite=False):
+    for key, value in a_src.items():
+        if key in a_dest:
+            if isinstance(value, dict) and isinstance(a_dest[key], dict):
+                deep_copy_dict_no_overwrite(value, a_dest[key], overwrite)
+            elif overwrite:
+                a_dest[key] = value
+        else:
+            a_dest[key] = value
+
