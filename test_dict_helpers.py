@@ -40,7 +40,7 @@ class TestDictHelpers(unittest.TestCase):
         assert (dict_helpers.get_dict_path(test_dict1, ['Me']) == 'Nitin')
         assert (dict_helpers.get_dict_path(test_dict1, ['GrandKids']) is None)
 
-    def test_deep_copy_dict_no_overwrite(self):
+    def test_deep_copy_dict(self):
         src_dict1 = {
             'India': {
                 'Telangana': {
@@ -65,8 +65,8 @@ class TestDictHelpers(unittest.TestCase):
         dest_dict1 = json.loads(json.dumps(tpl_dest_dict1))
         dest_dict2 = json.loads(json.dumps(tpl_dest_dict1))
 
-        dict_helpers.deep_copy_dict_no_overwrite(src_dict1, dest_dict1, False)
-        dict_helpers.deep_copy_dict_no_overwrite(src_dict1, dest_dict2, True)
+        dict_helpers.deep_copy_dict(src_dict1, dest_dict1, False)
+        dict_helpers.deep_copy_dict(src_dict1, dest_dict2, True)
 
         assert(dest_dict1['UAE']['Dubai'] == '25.18506895343312, 55.28510706928182')
         assert(dest_dict1['India']['Telangana']['Soan'] == 'MANDATORY VISIT')

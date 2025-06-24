@@ -33,6 +33,10 @@ Call the imported function:
 ```
 
 # Change Log
+* **Version 0.9**
+  * Added list_first
+* **Version 0.8**
+  * Renamed deep_copy_dict_no_overwrite to deep_copy_dict
 * **Version 0.7**
   * Added deep_copy_dict_no_overwrite
 * **Version 0.6**

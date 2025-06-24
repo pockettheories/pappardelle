@@ -1,5 +1,6 @@
 from .lists_helpers import compare_lists
 from .lists_helpers import lookup_lists
+from .lists_helpers import list_first
 
 from .date_helpers import days_before
 from .date_helpers import days_ago
@@ -35,4 +36,4 @@ from .date_helpers import years_since
 from .dict_helpers import make_dict_path
 from .dict_helpers import set_dict_path
 from .dict_helpers import get_dict_path
-from .dict_helpers import deep_copy_dict_no_overwrite
+from .dict_helpers import deep_copy_dict

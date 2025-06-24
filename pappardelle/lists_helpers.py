@@ -49,3 +49,15 @@ def compare_lists(list1, list2, equal_check=lambda x, y: x == y):
         if not is_iter2_found_in_iter1:
             result['-'].append(iter2)
     return result
+
+
+def list_first(a_list):
+    if a_list is None:
+        return None
+
+    tmp_list = list(a_list)  # In case we have a filter result instead of an actual list
+    if len(tmp_list) == 0:
+        return None
+
+    return tmp_list[0]
+

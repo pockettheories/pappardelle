@@ -1,7 +1,6 @@
 import sys
 
-from pappardelle import compare_lists
-from pappardelle import lookup_lists
+from pappardelle import compare_lists, lookup_lists, list_first
 from pappardelle import yesterday, tomorrow
 from datetime import date, datetime, timedelta
 import json
@@ -109,3 +108,8 @@ class TestListHelpers(unittest.TestCase):
                     assert(iter_result['lookup'][iter_dict_key] == lookup_value[iter_dict_key])
             else:
                 assert(iter_result['lookup'] is None)
+
+    def test_list_first(self):
+        assert(list_first([4, 3, 2, 1]) == 4)
+        assert(list_first(None) is None)
+        assert(list_first([]) is None)
