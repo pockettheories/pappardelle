@@ -37,3 +37,8 @@ from .dict_helpers import make_dict_path
 from .dict_helpers import set_dict_path
 from .dict_helpers import get_dict_path
 from .dict_helpers import deep_copy_dict
+
+from .string_helpers import string_or_default
+
+from .function_helpers import CacheOrLambda
+from .function_helpers import exec_time

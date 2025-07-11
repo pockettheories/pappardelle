@@ -159,9 +159,23 @@ Call the imported function:
 
 `years_since_at_this_time(num_of_years, from_datetime)`
 
+## Dictionary Functions
+
+`make_dict_path(a_dict, a_path)`
+
+`set_dict_path(a_dict, a_path, a_val)`
+
+`get_dict_path(a_dict, a_path)`
+
+`deep_copy_dict(a_src, a_dest, optional overwrite)`
+
 ## Function Decorators
 
 `exec_time`
+
+## String Functions
+
+`string_or_default(primary_value, secondary_value)`
 
 # Author
 

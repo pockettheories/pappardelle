@@ -5,7 +5,7 @@ with open('README.md', 'r') as f:
 
 setup(
     name='pappardelle',
-    version='0.9',
+    version='0.10',
     long_description_content_type='text/markdown',
     long_description=long_description,
     packages=find_packages(),

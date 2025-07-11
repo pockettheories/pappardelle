@@ -1,10 +1,8 @@
-import sys
-
+import unittest, sys
+import json
 from pappardelle import compare_lists, lookup_lists, list_first
 from pappardelle import yesterday, tomorrow
 from datetime import date, datetime, timedelta
-import json
-import unittest
 
 sys.path.append('pappardelle')  # Include the subdir in the PythonPath
 
