@@ -1,5 +1,5 @@
 import unittest, sys
-from pappardelle import string_or_default
+from pappardelle import string_or_default, is_null_or_whitespace
 
 sys.path.append('pappardelle')  # Include the subdir in the PythonPath
 
@@ -90,3 +90,90 @@ class TestStringHelpers(unittest.TestCase):
         """Test string_or_default with 'False' as string."""
         result = string_or_default("False", "default")
         self.assertEqual(result, "False")
+
+    def test_string_or_default_with_three_params(self):
+        """Test string_or_default with None twice and a non-empty string."""
+        result = string_or_default(None, None, "nonagon")
+        self.assertEqual(result, "nonagon")
+
+    def test_is_null_or_whitespace_with_null(self):
+        """Test is_null_or_whitespace with a null"""
+        result = is_null_or_whitespace(None)
+        self.assertEqual(result, True)
+
+    def test_is_null_or_whitespace_with_empty(self):
+        """Test is_null_or_whitespace with an empty string"""
+        result = is_null_or_whitespace('')
+        self.assertEqual(result, True)
+
+    def test_is_null_or_whitespace_with_whitespace(self):
+        """Test is_null_or_whitespace with whitespace strings"""
+        result = is_null_or_whitespace(' ')
+        self.assertEqual(result, True)
+        result = is_null_or_whitespace('  ')
+        self.assertEqual(result, True)
+        result = is_null_or_whitespace('\n')
+        self.assertEqual(result, True)
+        result = is_null_or_whitespace('\t')
+        self.assertEqual(result, True)
+        result = is_null_or_whitespace(' \n')
+        self.assertEqual(result, True)
+        result = is_null_or_whitespace(' \t')
+        self.assertEqual(result, True)
+        result = is_null_or_whitespace('\n ')
+        self.assertEqual(result, True)
+        result = is_null_or_whitespace('\t ')
+        self.assertEqual(result, True)
+
+    def test_is_null_or_whitespace_with_non_empty(self):
+        """Test is_null_or_whitespace with non-empty strings"""
+        result = is_null_or_whitespace('a')
+        self.assertEqual(result, False)
+        result = is_null_or_whitespace('1')
+        self.assertEqual(result, False)
+        result = is_null_or_whitespace('False')
+        self.assertEqual(result, False)
+        result = is_null_or_whitespace('false')
+        self.assertEqual(result, False)
+        result = is_null_or_whitespace('null')
+        self.assertEqual(result, False)
+        result = is_null_or_whitespace('None')
+        self.assertEqual(result, False)
+        result = is_null_or_whitespace('NULL')
+        self.assertEqual(result, False)
+        result = is_null_or_whitespace('0')
+        self.assertEqual(result, False)
+        result = is_null_or_whitespace('A')
+        self.assertEqual(result, False)
+        result = is_null_or_whitespace('a ')
+        self.assertEqual(result, False)
+        result = is_null_or_whitespace(' a')
+        self.assertEqual(result, False)
+        result = is_null_or_whitespace(' a ')
+        self.assertEqual(result, False)
+        result = is_null_or_whitespace('\na')
+        self.assertEqual(result, False)
+        result = is_null_or_whitespace('a\n')
+        self.assertEqual(result, False)
+        result = is_null_or_whitespace('\ta')
+        self.assertEqual(result, False)
+        result = is_null_or_whitespace('a\t')
+        self.assertEqual(result, False)
+        result = is_null_or_whitespace('a \t')
+        self.assertEqual(result, False)
+        result = is_null_or_whitespace('a \n')
+        self.assertEqual(result, False)
+        result = is_null_or_whitespace('\n a')
+        self.assertEqual(result, False)
+        result = is_null_or_whitespace('\t a')
+        self.assertEqual(result, False)
+        result = is_null_or_whitespace('^')
+        self.assertEqual(result, False)
+        result = is_null_or_whitespace('.')
+        self.assertEqual(result, False)
+        result = is_null_or_whitespace('_')
+        self.assertEqual(result, False)
+        result = is_null_or_whitespace('+')
+        self.assertEqual(result, False)
+        result = is_null_or_whitespace('-')
+        self.assertEqual(result, False)

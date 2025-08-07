@@ -52,6 +52,11 @@ def compare_lists(list1, list2, equal_check=lambda x, y: x == y):
 
 
 def list_first(a_list):
+    """
+    Extracts the first list element
+    :param a_list: A list
+    :return: The first list element
+    """
     if a_list is None:
         return None
 

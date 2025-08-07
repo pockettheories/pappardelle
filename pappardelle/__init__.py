@@ -39,6 +39,10 @@ from .dict_helpers import get_dict_path
 from .dict_helpers import deep_copy_dict
 
 from .string_helpers import string_or_default
+from .string_helpers import is_null_or_whitespace
+from .string_helpers import is_null_or_empty
+from .string_helpers import str_ignorecase_equals
+from .string_helpers import str_ignorecase_index
 
 from .function_helpers import CacheOrLambda
 from .function_helpers import exec_time

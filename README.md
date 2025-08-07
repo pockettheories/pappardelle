@@ -33,6 +33,8 @@ Call the imported function:
 ```
 
 # Change Log
+* **Version 0.11**
+  * string_or_default accepts varargs, instead of only 2 parameters
 * **Version 0.9**
   * Added list_first
 * **Version 0.8**
@@ -176,6 +178,14 @@ Call the imported function:
 ## String Functions
 
 `string_or_default(primary_value, secondary_value)`
+
+`is_null_or_whitespace(val)`
+
+`is_null_or_empty(val)`
+
+`str_ignorecase_equals(str1, str2)`
+
+`str_ignorecase_index(str1, str2)`
 
 # Author
 
