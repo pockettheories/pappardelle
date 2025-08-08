@@ -18,3 +18,6 @@ def str_ignorecase_equals(str1, str2):
 
 def str_ignorecase_index(str1, str2):
     return str1.upper().index(str2.upper())
+
+def str_ignorecase_startswith(str1, str2):
+    return str1.upper().startswith(str2.upper())

@@ -1,5 +1,5 @@
 import unittest, sys
-from pappardelle import string_or_default, is_null_or_whitespace
+from pappardelle import string_or_default, is_null_or_whitespace, str_ignorecase_startswith
 
 sys.path.append('pappardelle')  # Include the subdir in the PythonPath
 
@@ -105,6 +105,23 @@ class TestStringHelpers(unittest.TestCase):
         """Test is_null_or_whitespace with an empty string"""
         result = is_null_or_whitespace('')
         self.assertEqual(result, True)
+
+    def test_str_ignorecase_startswith_diff_capitalization(self):
+        """Test str_ignorecase_startswith with the same string but with different capitalization"""
+        result = str_ignorecase_startswith('Nita', 'nita')
+        self.assertEqual(result, True)
+
+    def test_str_ignorecase_startswith_diff_str(self):
+        """Test str_ignorecase_startswith with different strings"""
+        result = str_ignorecase_startswith('Jagravi', 'urmi')
+        self.assertEqual(result, False)
+
+    def test_str_ignorecase_startswith_same_str(self):
+        """Test str_ignorecase_startswith with the same string"""
+        result = str_ignorecase_startswith('Narsing', 'Narsing')
+        self.assertEqual(result, True)
+
+    # TODO: More _startswith use cases where str1 is a substring of str2, and str2 is a substring of str1
 
     def test_is_null_or_whitespace_with_whitespace(self):
         """Test is_null_or_whitespace with whitespace strings"""

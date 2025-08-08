@@ -43,6 +43,7 @@ from .string_helpers import is_null_or_whitespace
 from .string_helpers import is_null_or_empty
 from .string_helpers import str_ignorecase_equals
 from .string_helpers import str_ignorecase_index
+from .string_helpers import str_ignorecase_startswith
 
 from .function_helpers import CacheOrLambda
 from .function_helpers import exec_time
