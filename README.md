@@ -33,6 +33,8 @@ Call the imported function:
 ```
 
 # Change Log
+* **Version 0.12**
+  * Added if_whitespace_make_null
 * **Version 0.11**
   * string_or_default accepts varargs, instead of only 2 parameters
 * **Version 0.9**
